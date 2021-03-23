@@ -35,9 +35,22 @@ class Cat
      Quote.new(content, self)
    end
 
+   def quotes
+     Quote.all.select{|quote| quote.cat == self}
+   end
 
+   def print_quotes
+        if quotes.any?
+            quotes.each_with_index do |quote, i|
+                puts "#{i + 1}. #{quote.content}"
+            end
+        else puts "#{name} has no quotes. : ("
+        end
+    end
 
-  
+    def pet_cat
+        puts "purrrrr =^..^="
 
+    end
 
 end
