@@ -1,9 +1,11 @@
 class CLI
+    attr_accessor :Cat
 
     def initialize
         @prompt = TTY::Prompt.new
         welcome
-       # GhibliAPI.new
+        menu
+        GhibliAPI.new.response
     end
 
     def welcome
@@ -13,32 +15,34 @@ class CLI
     def menu
         input = @prompt.enum_select("What would you like to do?", ["See all the cats!", "Exit"])
         case input
-        when 1 
-            show_all_cats
-        when 2
-            exit
+        when "See all the cats!"
+            show_all_cats(Cat.all)
+        when "Exit"
+            logout
         end
     end
 
 
-    #def show_all_cats(cats)
-     #   input = @prompt.select("Which cat would you like to view?", cats.map{|cat| cat.name}
-      #  Cats.find_by_name(input)
-   # end
+    def show_all_cats(cats)
+        input = @prompt.select("Which cat would you like to view?", cats.map{|cat| cat.name})
+        cat = Cat.find_by_name(input)
+        cat_menu(cat)
+    end
 
-    #def cat_menu(cat)
+    def cat_menu(cat)
+       puts "Here's the info on #{cat.name}."
+       cat.print_details
+       menu
+    end 
 
-     #   cat.print_details
-    #end
+       #def pet_cat
+      # puts "meeeooooww!"
+     # end
 
 
-    #def exit
-        #puts "Thanks for visting!" 
-    #end
-
-    #def pet_cat
-      #  puts "meeeooooww!"
-  #  end
+    def logout
+        puts "Thanks for visiting Cats of Studio Ghibli!" 
+    end
 
 
 end

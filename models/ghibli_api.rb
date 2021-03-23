@@ -1,25 +1,26 @@
 class GhibliAPI
     attr_reader :response
 
-    def self.get_cats_hash
-    cats_hash = []
+    def initialize
+    cats = []
     response = HTTParty.get("https://ghibliapi.herokuapp.com/species/603428ba-8a86-4b0b-a9f1-65df6abef3d3/")
     response["people"].each do |link|
         c_response = HTTParty.get(link)
-        c_response.each do |attribute|
-            cats_hash << temp = { 
+        c_response.each do |attribute|    
+                hash = { 
                 :name => c_response["name"],
                 :gender =>  c_response["gender"],
                 :age => c_response["age"],
-                :eye_colors => c_response["eye_colors"],
-                :hair_colors => c_response["hair_colors"],
+                :eye_color => c_response["eye_color"],
+                :hair_color => c_response["hair_color"],
                 :films => c_response["films"]
-            }
-        end 
-    end
-    cats_hash = cats_hash.uniq!
+             }
+             cats << hash
+                end 
+            end
+    @response = cats.uniq!
     #puts cats_hash
-end 
-
+    end 
+ 
 
 end
