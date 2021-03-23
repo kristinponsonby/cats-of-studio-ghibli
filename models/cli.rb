@@ -41,7 +41,7 @@ class CLI
 
 
     def logout
-        puts "Thanks for visiting Cats of Studio Ghibli!" 
+        puts "Thanks for visiting Cats of Studio Ghibli! =^..^="
     end
 
 

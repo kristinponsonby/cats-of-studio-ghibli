@@ -31,24 +31,13 @@ class Cat
     puts "Films: #{self.films}"
    end
 
-
-   #end
-
-      #def self.new_cat(api_cats)
-     #api_cats.each do |cat| 
-       # Cat.new(cat)
-     #end
-   # end
+   def add_quote(content)
+     Quote.new(content, self)
+   end
 
 
 
-
+  
 
 
 end
-    #metaprogram initialize:
-    # hash.each do |key, value| 
-        #self.send("#{key}=", value)
-        #end
-        #@@all << self 
-    
