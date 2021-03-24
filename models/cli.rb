@@ -14,10 +14,9 @@ class CLI
     end
 
     def menu
-        @character = nil
-        input = @prompt.enum_select("What would you like to do?", ["Show me the cats!", "Exit"])
+        input = @prompt.enum_select("What would you like to do?", ["Show Me the Cats!", "Exit"])
         case input
-        when "Show me the cats!"
+        when "Show Me the Cats!"
             show_all_cats(Cat.all)
         when "Exit"
             logout
@@ -32,9 +31,9 @@ class CLI
     end
 
     def cat_menu(cat)
-       puts "Here's the info on #{cat.name}." 
+       puts "**** Here's the info on #{cat.name} ***" 
        cat.print_details
-       input = @prompt.enum_select("Okay, what now?", ["See Favorite Quotes", "Pet #{cat.name}", "See #{cat.name}'s Details", "Exit"])
+       input = @prompt.enum_select("Okay, what now?", ["See Favorite Quotes", "Pet #{cat.name}", "Exit"])
         case input
         when "See Favorite Quotes"
            cat.print_quotes
@@ -42,11 +41,9 @@ class CLI
         when "Pet #{cat.name}"
             cat.pet_cat
             menu
-        when "See #{cat.name}'s Details"
-            cat.print_details
-            menu
-        when "See all cats"
-            show_all_cats(Cat.all)
+        # when "Back to The Cats"
+        #     puts "How do I go back to the cats?"
+        #         menu
         when "Exit"
             logout
         end
