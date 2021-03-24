@@ -15,9 +15,9 @@ class CLI
 
     def menu
         @character = nil
-        input = @prompt.enum_select("What would you like to do?", ["See all the cats!", "Exit"])
+        input = @prompt.enum_select("What would you like to do?", ["Show me the cats!", "Exit"])
         case input
-        when "See all the cats!"
+        when "Show me the cats!"
             show_all_cats(Cat.all)
         when "Exit"
             logout
@@ -50,7 +50,7 @@ class CLI
         when "Exit"
             logout
         end
-       
+    
     end 
 
 

@@ -41,8 +41,8 @@ class Cat
 
    def print_quotes
         if quotes.any?
-            quotes.each_with_index do |quote, i|
-                puts "#{i + 1}. #{quote.content}"
+            quotes.each do |quote|
+                puts "#{quote.content}"
             end
         else puts "#{name} has no quotes. : ("
         end
@@ -50,7 +50,6 @@ class Cat
 
     def pet_cat
         puts "purrrrr =^..^="
-
     end
 
 end

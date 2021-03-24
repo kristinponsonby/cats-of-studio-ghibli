@@ -14,5 +14,4 @@ class Quote
     end
 
 
-
 end
