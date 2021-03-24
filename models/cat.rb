@@ -31,8 +31,8 @@ class Cat
     puts "Films: #{self.films}"
    end
 
-   def add_quote(content)
-     Quote.new(content, self)
+   def add_quote(sentence)
+     Quote.new(sentence, self)
    end
 
    def quotes
@@ -42,9 +42,9 @@ class Cat
    def print_quotes
         if quotes.any?
             quotes.each do |quote|
-                puts "#{quote.content}"
+                puts "#{quote.sentence}"
             end
-        else puts "#{name} has no quotes. : ("
+        else puts "#{name} doesn't talk silly!"
         end
     end
 

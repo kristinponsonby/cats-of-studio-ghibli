@@ -1,11 +1,11 @@
 class Quote
 
-    attr_reader :content, :cat
+    attr_reader :sentence, :cat
 
     @@all = []
 
-    def initialize(content, cat)
-        @content, @cat = content, cat
+    def initialize(sentence, cat)
+        @sentence, @cat = sentence, cat
         @@all << self
     end
 

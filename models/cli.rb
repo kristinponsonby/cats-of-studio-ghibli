@@ -4,12 +4,12 @@ class CLI
 
     def initialize
         @prompt = TTY::Prompt.new
-        welcome
+        intro
         menu
         GhibliAPI.new.response
     end
 
-    def welcome
+    def intro
         puts "Welcome to Cats of Studio Ghibli."
     end
 
@@ -41,9 +41,6 @@ class CLI
         when "Pet #{cat.name}"
             cat.pet_cat
             menu
-        # when "Back to The Cats"
-        #     puts "How do I go back to the cats?"
-        #         menu
         when "Exit"
             logout
         end

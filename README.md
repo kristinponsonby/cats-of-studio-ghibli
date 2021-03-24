@@ -10,7 +10,7 @@ Then $ gem install cats-of-studio-ghibli
 
 Use:
 
-Type ruby run/rb. and follow the on screen prompts.
+Type bin/show_me_cats to start the app and follow the on screen prompts.
 
 Contributors Guide:
 
