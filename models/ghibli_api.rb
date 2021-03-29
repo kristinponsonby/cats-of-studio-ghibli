@@ -13,14 +13,22 @@ class GhibliAPI
                 :age => c_response["age"],
                 :eye_color => c_response["eye_color"],
                 :hair_color => c_response["hair_color"],
-                :films => c_response["films"]
+                :films => films_array(c_response["films"])
              }
              cats << hash
                 end 
             end
     @response = cats.uniq!
-    #puts cats_hash
     end 
  
 
+    def films_array(film_urls)
+        film_urls.map do |link|
+            films_response = HTTParty.get(link)
+            films_response["title"]
+        end
+    end
+
 end
+
+

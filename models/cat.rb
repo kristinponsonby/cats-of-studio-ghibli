@@ -10,7 +10,7 @@ class Cat
         @age = hash[:age]
         @eye_color = hash[:eye_color]
         @hair_color = hash[:hair_color]
-        @films = hash[:films]
+        @films = hash[:films].join(", ")
         @@all << self
     end
 
