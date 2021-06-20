@@ -1,7 +1,7 @@
 Cats of Studio Ghibli
 
 Description:
-This Ruby Gem provides a user access to all of the cats that appear in the Studio Ghibli universe of films by Hayao Miyazaki. A user can then view details and famous quotes for each cat! 
+This Ruby gem provides a user access to all of the cats that appear in the Studio Ghibli universe of films by Hayao Miyazaki. A user can then view details and famous quotes for each cat! 
 
 Installation:
 
